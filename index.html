@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trucking Channels · Showcase</title>
+<meta name="description" content="Три YouTube / TikTok / Instagram канали про трак-індустрію США: формати й готові відео тижня 18–24.11.2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b1220; --panel:#111a2e; --panel2:#16213a; --line:#24314f; --text:#e8edf7; --muted:#93a0bb;
+  --accent:#ff8a1f; --ok:#22c55e; --ready:#60a5fa;
+  --eugene:#2f7fe0; --haul:#ff8a1f; --wire:#e5484d;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 Inter,system-ui,sans-serif}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;z-index:20;background:rgba(11,18,32,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:18px;height:64px}
+.logo{font:900 18px Montserrat;letter-spacing:.5px;white-space:nowrap}
+.logo span{color:var(--accent)}
+nav.tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+nav.tabs::-webkit-scrollbar{display:none}
+.tab{border:1px solid var(--line);background:transparent;color:var(--muted);padding:8px 14px;border-radius:999px;cursor:pointer;font:600 14px Inter;white-space:nowrap;display:flex;align-items:center;gap:8px}
+.tab .dot{width:8px;height:8px;border-radius:50%}
+.tab.on{color:var(--text);background:var(--panel2);border-color:#3a4a70}
+.hero{padding:48px 0 24px}
+.hero h1{font:900 clamp(28px,4.6vw,52px)/1.05 Montserrat;margin:0 0 14px;letter-spacing:-.5px}
+.hero p{color:var(--muted);max-width:760px;margin:0;font-size:17px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:28px 0 8px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.stat b{display:block;font:800 28px Montserrat}
+.stat small{color:var(--muted)}
+.chcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin:28px 0 60px}
+.chcard{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;cursor:pointer;transition:transform .15s,border-color .15s}
+.chcard:hover{transform:translateY(-3px);border-color:#3a4a70}
+.chcard .strip{display:flex;gap:4px;height:170px;overflow:hidden;background:#000}
+.chcard .strip img{height:100%;width:auto;flex:none;object-fit:cover}
+.chcard .body{padding:18px}
+.chcard h3{margin:0 0 6px;font:800 20px Montserrat;display:flex;align-items:center;gap:10px}
+.chcard p{margin:0;color:var(--muted);font-size:14px}
+.pill{display:inline-block;font:600 12px Inter;padding:3px 9px;border-radius:999px;background:var(--panel2);border:1px solid var(--line);color:var(--muted);margin:10px 6px 0 0}
+section.ch{display:none;padding-bottom:80px}
+section.ch.on{display:block}
+#home{display:none} #home.on{display:block}
+.chhead{padding:40px 0 10px;display:grid;grid-template-columns:1.3fr 1fr;gap:28px;align-items:start}
+.chhead h2{font:900 clamp(26px,3.6vw,42px)/1.1 Montserrat;margin:0 0 6px}
+.chhead .tag{font:700 13px Inter;letter-spacing:1.5px;text-transform:uppercase}
+.chhead p{color:var(--muted);margin:10px 0 0}
+.facts{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:6px 18px}
+.facts div{display:flex;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:14px}
+.facts div:last-child{border:0}
+.facts dt{color:var(--muted);min-width:118px;flex:none}
+.facts dd{margin:0}
+.rub{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0}
+.rub span{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:6px 10px;font-size:13px}
+.rub span b{display:block;font-size:12px;letter-spacing:.5px}
+.filters{display:flex;gap:8px;align-items:center;margin:30px 0 6px;flex-wrap:wrap}
+.filters .f{border:1px solid var(--line);background:var(--panel);color:var(--muted);padding:6px 12px;border-radius:8px;cursor:pointer;font:600 13px Inter}
+.filters .f.on{color:var(--text);border-color:#4b5d88;background:var(--panel2)}
+.legend{margin-left:auto;display:flex;gap:14px;color:var(--muted);font-size:13px}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px}
+.day{margin-top:26px}
+.dayh{display:flex;align-items:baseline;gap:12px;margin-bottom:12px;border-bottom:1px solid var(--line);padding-bottom:8px}
+.dayh h4{margin:0;font:800 18px Montserrat}
+.dayh .st{font:600 12px Inter;padding:2px 9px;border-radius:999px}
+.st.pub{background:rgba(34,197,94,.14);color:var(--ok)}
+.st.rdy{background:rgba(96,165,250,.14);color:var(--ready)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;transition:transform .15s,border-color .15s;text-align:left;color:inherit;font:inherit;padding:0}
+.card:hover{transform:translateY(-3px);border-color:#4b5d88}
+.card.long{grid-column:span 2}
+.thumb{position:relative;background:#000;aspect-ratio:9/16;overflow:hidden}
+.card.long .thumb{aspect-ratio:16/9}
+.card.long{align-self:start}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.thumb .play{position:absolute;inset:0;display:grid;place-items:center;opacity:0;transition:opacity .15s;background:rgba(0,0,0,.25)}
+.card:hover .play{opacity:1}
+.play svg{width:54px;height:54px}
+.badge{position:absolute;top:8px;left:8px;font:700 11px Inter;padding:3px 7px;border-radius:6px;background:rgba(0,0,0,.7);letter-spacing:.4px}
+.badge.lg{background:var(--accent);color:#111}
+.dur{position:absolute;bottom:8px;right:8px;font:600 11px Inter;padding:2px 6px;border-radius:5px;background:rgba(0,0,0,.75)}
+.meta{padding:10px 12px 12px}
+.meta .tm{color:var(--muted);font-size:12px;display:flex;align-items:center;gap:6px}
+.meta .tm i{width:7px;height:7px;border-radius:50%}
+.meta .tt{font-weight:600;font-size:13.5px;line-height:1.35;margin-top:4px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.modal{position:fixed;inset:0;z-index:50;background:rgba(3,6,12,.86);display:none;align-items:center;justify-content:center;padding:20px}
+.modal.on{display:flex}
+.mbox{background:var(--panel);border:1px solid var(--line);border-radius:16px;max-width:1100px;width:100%;max-height:calc(100vh - 40px);display:grid;grid-template-columns:auto minmax(300px,1fr);overflow:hidden}
+.mbox.long{grid-template-columns:1fr;max-width:1000px;overflow:auto}
+.mvid{background:#000;display:flex;align-items:center;justify-content:center}
+.mvid video{display:block;max-height:calc(100vh - 40px);max-width:100%;width:auto}
+.mbox:not(.long) .mvid video{height:calc(100vh - 40px);max-height:860px;aspect-ratio:9/16}
+.mbox.long .mvid video{width:100%;height:auto;max-height:62vh}
+.minfo{padding:22px;overflow:auto}
+.minfo .tm{color:var(--muted);font-size:13px}
+.minfo h3{font:800 20px/1.25 Montserrat;margin:6px 0 14px}
+.minfo details{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.minfo summary{cursor:pointer;font-weight:600;font-size:14px}
+.minfo pre{white-space:pre-wrap;font:12.5px/1.5 ui-monospace,Consolas,monospace;color:#c9d3e6;margin:12px 0 4px}
+.x{position:fixed;top:14px;right:18px;z-index:60;background:var(--panel2);border:1px solid var(--line);color:var(--text);width:42px;height:42px;border-radius:50%;font-size:22px;cursor:pointer;display:none}
+.modal.on ~ .x{display:block}
+.nav2{display:flex;gap:8px;margin-top:14px}
+.nav2 button{flex:1;background:var(--panel2);border:1px solid var(--line);color:var(--text);padding:9px;border-radius:9px;cursor:pointer;font:600 13px Inter}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;padding:26px 0 40px}
+@media (max-width:820px){
+  .chhead{grid-template-columns:1fr}
+  .mbox,.mbox.long{grid-template-columns:1fr;overflow:auto}
+  .mbox:not(.long) .mvid video{height:auto;width:100%;max-height:70vh}
+  .wrap{padding:0 16px}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .card.long{grid-column:1/-1}
+  .legend{margin-left:0}
+}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap bar">
+  <div class="logo">TRUCKING<span>/</span>CHANNELS</div>
+  <nav class="tabs" id="tabs"></nav>
+</div></header>
+
+<main class="wrap">
+  <div id="home">
+    <div class="hero">
+      <h1>Три канали про трак-індустрію США.<br>Тиждень 18–24 листопада.</h1>
+      <p>Короткі відео для YouTube Shorts, TikTok та Instagram Reels і довгі відео для YouTube. Кожен канал має свій формат, свою подачу й водить водіїв на форму Swan Trans (рекрутинг CDL-A). Усе змонтовано автоматично: сценарій → голос → моушн-графіка з реальними кадрами.</p>
+      <div class="stats" id="stats"></div>
+    </div>
+    <div class="chcards" id="chcards"></div>
+  </div>
+  <div id="sections"></div>
+</main>
+
+<div class="modal" id="modal"><div class="mbox" id="mbox"></div></div>
+<button class="x" id="x" aria-label="Закрити">×</button>
+
+<footer><div class="wrap">Статус: <b style="color:var(--ok)">●</b> вже вийшло (18–20.11) · <b style="color:var(--ready)">●</b> готово до публікації. Показано веб-копії зі зниженою якістю; оригінали — 1080p. Голос і ведучий (Eugene) згенеровані ШІ, на платформах стоїть відповідна позначка.</div></footer>
+
+<script src="data.js"></script>
+<script>
+const CH = {
+  eugene:{name:"Eugene Lebid · CDL Recruiter", short:"Eugene Lebid", color:"var(--eugene)", tag:"Особистий бренд рекрутера",
+    lead:"Канал від імені живого рекрутера Swan Trans Євгенія Лебідя. Він розповідає водіям правду про оплату, home time, контракти й найм — так, як говорить з ними щодня по телефону. Довіра через людину: обличчя й голос Євгенія (ШІ-аватар HeyGen і клон голосу ElevenLabs) + моушн у кольорах Swan Trans поверх реальних кадрів.",
+    facts:[["Частота","3 шортси на день + 2 довгі (~10 хв) на тиждень"],["Ведучий","Євгеній у кадрі на хуку й наприкінці, далі — реальні кадри + графіка"],["Подача аватара","5 варіантів: весь екран, спліт, коло, рамка-картка, відеодзвінок"],["Голос","Клон голосу Євгенія (ElevenLabs)"],["Заклик","Вставка Swan Trans голосом Євгенія: up to $3,500/week · experienced up to 75¢/mile"],["Довгі","Вставка «ми шукаємо водіїв» на 2-й хв + беззвучні плашки + фінальна вставка з формою"]],
+    rub:[["From My Calls","історії з дзвінків водіїв"],["What Recruiters Won't Tell You","незручна правда"],["A Driver Asked Me","питання водіїв"],["Before You Sign","контракти й оголошення"],["From the Full Video","нарізки з довгих"]]},
+  haul:{name:"The Weekly Haul", short:"The Weekly Haul", color:"var(--haul)", tag:"Новини й історії перевізників",
+    lead:"«Що перевізники не розказують водіям». Новини, документи й історії краху трак-компаній з позиції водія. Без обличчя: довіру тримає «паперовий слід» — накази FMCSA, банкрутства, позови з маркером і червоними штампами. Подача «Уяви → це сталося»: сцена, яку водій впізнає, а потім факт.",
+    facts:[["Частота","3 шортси на день + 2 довгі «Story of the Week» на тиждень"],["Ведучий","Без аватара, голос оповідача «старого водія»"],["Візуал","Документи, штампи SHUT DOWN / UNPAID, карта США, чек «Haul Math»"],["Голос","Синтетичний, позначено на платформах"],["Заклик","Мікровставка Swan Trans у кожному шортсі, повні вставки в довгих"],["Довгі","Історії Celadon і Yellow: як 3 000 і 30 000 людей залишились без роботи"]],
+    rub:[["Carrier Down","закриття перевізників"],["News","дизель, ставки, рейди, Конгрес"],["Hot Lane","ланцюги, рейди по штатах"],["Fine Print","lease-purchase, WARN Act"],["Story of the Week","велика історія тижня"]]},
+  wire:{name:"TRUCK WIRE USA", short:"Truck Wire USA", color:"var(--wire)", tag:"Щоденні новини з дороги",
+    lead:"Швидкі новини траку США з живими кадрами: аварії, крадіжки вантажів, фрод, суди, перевірки. Перші 3 секунди — хук із цифрою й червона плашка з місцем і датою. Кожна історія перевірена за першоджерелом; посилання в описі. На вихідних — довгі збірки тижня.",
+    facts:[["Частота","2 шортси на день (07:00 і 19:00 ET) + 2 довгі збірки на тиждень"],["Ранок / вечір","Ранок — «дорога» (аварії, мости), вечір — «гроші й фрод»"],["Візуал","Живі кадри, плашки з місцем і датою, цифри"],["Голос","Синтетичний, позначено на платформах"],["Заклик","Swan Trans: up to $3,500/week — посередині грошових історій, у кінці дорожніх"],["Довгі","Money, Fraud & Stolen Loads · Trains, Bridges & Pileups"]],
+    rub:[["Road","аварії, мости, потяги"],["Money & Fraud","крадіжки, шахрайство, суди"],["Rules","FMCSA, ELD, English OOS"]]},
+};
+const ORDER = ["eugene","haul","wire"];
+const V = window.VIDEOS || [];
+const PUBLISHED_UNTIL = "2026-11-20";
+const DAYS = ["неділя","понеділок","вівторок","середа","четвер","пʼятниця","субота"];
+const fmtDur = s => { s = Math.round(s); return Math.floor(s/60)+":"+String(s%60).padStart(2,"0"); };
+const fmtDay = d => { const x = new Date(d+"T12:00:00"); return `${DAYS[x.getDay()][0].toUpperCase()+DAYS[x.getDay()].slice(1)}, ${x.getDate()} листопада`; };
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const playSvg = '<svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="29" fill="rgba(0,0,0,.55)" stroke="#fff" stroke-width="2"/><path d="M24 18l18 12-18 12z" fill="#fff"/></svg>';
+
+// tabs
+const tabs = document.getElementById("tabs");
+tabs.innerHTML = `<button class="tab" data-t="home">Огляд</button>` + ORDER.map(k => `<button class="tab" data-t="${k}"><span class="dot" style="background:${CH[k].color}"></span>${CH[k].short}</button>`).join("");
+tabs.onclick = e => { const b = e.target.closest(".tab"); if (b) location.hash = b.dataset.t; };
+
+// home
+const shorts = V.filter(v => !v.long).length, longs = V.filter(v => v.long).length;
+const hours = V.reduce((a, v) => a + v.dur, 0) / 3600;
+document.getElementById("stats").innerHTML = [[3,"канали"],[shorts,"шортсів"],[longs,"довгих відео ~10 хв"],[hours.toFixed(1)+" год","готового відео"],[V.filter(v=>v.date<=PUBLISHED_UNTIL).length,"вже вийшло"]]
+  .map(([b,s]) => `<div class="stat"><b>${b}</b><small>${s}</small></div>`).join("");
+document.getElementById("chcards").innerHTML = ORDER.map(k => {
+  const vs = V.filter(v => v.ch === k), sh = vs.filter(v => !v.long);
+  return `<div class="chcard" data-t="${k}"><div class="strip">${sh.slice(0,6).map(v => v.poster ? `<img loading="lazy" src="${v.poster}" alt="">` : "").join("")}</div>
+  <div class="body"><h3><span class="dot" style="width:10px;height:10px;border-radius:50%;background:${CH[k].color}"></span>${CH[k].name}</h3><p>${CH[k].tag}</p>
+  <span class="pill">${sh.length} шортсів</span><span class="pill">${vs.length-sh.length} довгі</span></div></div>`;
+}).join("");
+document.getElementById("chcards").onclick = e => { const c = e.target.closest(".chcard"); if (c) location.hash = c.dataset.t; };
+
+// channel sections
+const secs = document.getElementById("sections");
+secs.innerHTML = ORDER.map(k => {
+  const c = CH[k];
+  return `<section class="ch" id="sec-${k}">
+    <div class="chhead"><div><div class="tag" style="color:${c.color}">${c.tag}</div><h2>${c.name}</h2><p>${c.lead}</p>
+      <div class="rub">${c.rub.map(([a,b]) => `<span><b>${a}</b>${b}</span>`).join("")}</div></div>
+      <dl class="facts">${c.facts.map(([a,b]) => `<div><dt>${a}</dt><dd>${b}</dd></div>`).join("")}</dl></div>
+    <div class="filters" data-ch="${k}"><button class="f on" data-f="all">Усі</button><button class="f" data-f="short">Шортси</button><button class="f" data-f="long">Довгі</button>
+      <div class="legend"><span><i style="background:var(--ok)"></i>Вийшло</span><span><i style="background:var(--ready)"></i>Готово</span></div></div>
+    <div class="days" id="days-${k}"></div></section>`;
+}).join("");
+
+function renderDays(k, f) {
+  const vs = V.filter(v => v.ch === k && (f === "all" || (f === "long") === v.long));
+  const dates = [...new Set(vs.map(v => v.date))];
+  document.getElementById("days-"+k).innerHTML = dates.map(d => {
+    const pub = d <= PUBLISHED_UNTIL;
+    return `<div class="day"><div class="dayh"><h4>${fmtDay(d)}</h4><span class="st ${pub?"pub":"rdy"}">${pub?"Вийшло":"Готово до публікації"}</span></div>
+    <div class="grid">${vs.filter(v => v.date === d).map(v => `<button class="card${v.long?" long":""}" data-id="${v.id}">
+      <div class="thumb">${v.poster?`<img loading="lazy" src="${v.poster}" alt="">`:""}<div class="play">${playSvg}</div>
+      <span class="badge${v.long?" lg":""}">${v.long?"YOUTUBE · LONG":"SHORT"}</span><span class="dur">${fmtDur(v.dur)}</span></div>
+      <div class="meta"><div class="tm"><i style="background:${pub?"var(--ok)":"var(--ready)"}"></i>${v.time} ${v.tz}</div><div class="tt">${esc(v.title)}</div></div></button>`).join("")}</div></div>`;
+  }).join("");
+}
+ORDER.forEach(k => renderDays(k, "all"));
+secs.addEventListener("click", e => {
+  const f = e.target.closest(".f");
+  if (f) { const box = f.parentElement; box.querySelectorAll(".f").forEach(b => b.classList.toggle("on", b === f)); renderDays(box.dataset.ch, f.dataset.f); return; }
+  const c = e.target.closest(".card"); if (c) openV(c.dataset.id);
+});
+
+// modal
+const modal = document.getElementById("modal"), mbox = document.getElementById("mbox");
+let cur = null;
+function openV(id) {
+  const v = V.find(x => x.id === id); if (!v) return; cur = v;
+  mbox.className = "mbox" + (v.long ? " long" : "");
+  mbox.innerHTML = `<div class="mvid"><video src="${v.video}" poster="${v.poster}" controls autoplay playsinline preload="metadata"></video></div>
+    <div class="minfo"><div class="tm" style="color:${CH[v.ch].color}">${CH[v.ch].name}</div>
+    <div class="tm">${fmtDay(v.date)} · ${v.time} ${v.tz} · ${v.long?"довге відео":"шортс"} · ${fmtDur(v.dur)}</div>
+    <h3>${esc(v.title)}</h3>
+    <details><summary>Тексти для публікації: назва, опис, теги, підписи</summary><pre>${esc(v.text)}</pre></details>
+    <div class="nav2"><button data-d="-1">← Попереднє</button><button data-d="1">Наступне →</button></div></div>`;
+  modal.classList.add("on");
+}
+function closeV() { modal.classList.remove("on"); mbox.innerHTML = ""; cur = null; }
+function step(d) { if (!cur) return; const list = V.filter(v => v.ch === cur.ch); const i = list.indexOf(cur) + d; if (list[i]) openV(list[i].id); }
+modal.onclick = e => { if (e.target === modal) closeV(); const b = e.target.closest("[data-d]"); if (b) step(+b.dataset.d); };
+document.getElementById("x").onclick = closeV;
+document.addEventListener("keydown", e => { if (!cur) return; if (e.key === "Escape") closeV(); if (e.key === "ArrowRight") step(1); if (e.key === "ArrowLeft") step(-1); });
+
+// routing
+function route() {
+  const t = (location.hash || "#home").slice(1);
+  const k = ORDER.includes(t) ? t : "home";
+  document.getElementById("home").classList.toggle("on", k === "home");
+  ORDER.forEach(x => document.getElementById("sec-"+x).classList.toggle("on", x === k));
+  tabs.querySelectorAll(".tab").forEach(b => b.classList.toggle("on", b.dataset.t === k));
+  closeV(); window.scrollTo(0, 0);
+}
+addEventListener("hashchange", route); route();
+</script>
+</body>
+</html>

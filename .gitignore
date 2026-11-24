@@ -1,0 +1,4 @@
+.claude/
+build.py
+media.log
+__pycache__/
