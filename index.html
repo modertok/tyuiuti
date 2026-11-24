@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Trucking Channels · Showcase</title>
-<meta name="description" content="Три YouTube / TikTok / Instagram канали про трак-індустрію США: формати й готові відео тижня 18–24.11.2026.">
+<meta name="description" content="Три YouTube / TikTok / Instagram канали про трак-індустрію США: формати й готові відео.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -126,7 +126,7 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;paddin
 <main class="wrap">
   <div id="home">
     <div class="hero">
-      <h1>Три канали про трак-індустрію США.<br>Тиждень 18–24 листопада.</h1>
+      <h1>Три канали про трак-індустрію США.</h1>
       <p>Короткі відео для YouTube Shorts, TikTok та Instagram Reels і довгі відео для YouTube. Кожен канал має свій формат, свою подачу й водить водіїв на форму Swan Trans (рекрутинг CDL-A). Усе змонтовано автоматично: сценарій → голос → моушн-графіка з реальними кадрами.</p>
       <div class="stats" id="stats"></div>
     </div>
@@ -138,9 +138,9 @@ footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;paddin
 <div class="modal" id="modal"><div class="mbox" id="mbox"></div></div>
 <button class="x" id="x" aria-label="Закрити">×</button>
 
-<footer><div class="wrap">Статус: <b style="color:var(--ok)">●</b> вже вийшло (18–20.11) · <b style="color:var(--ready)">●</b> готово до публікації. Показано веб-копії зі зниженою якістю; оригінали — 1080p. Голос і ведучий (Eugene) згенеровані ШІ, на платформах стоїть відповідна позначка.</div></footer>
+<footer><div class="wrap">Статус: <b style="color:var(--ok)">●</b> вже вийшло · <b style="color:var(--ready)">●</b> готово до публікації. Показано веб-копії зі зниженою якістю; оригінали — 1080p. Голос і ведучий (Eugene) згенеровані ШІ, на платформах стоїть відповідна позначка.</div></footer>
 
-<script src="data.js"></script>
+<script src="data.js?v=2"></script>
 <script>
 const CH = {
   eugene:{name:"Eugene Lebid · CDL Recruiter", short:"Eugene Lebid", color:"var(--eugene)", tag:"Особистий бренд рекрутера",
@@ -158,10 +158,7 @@ const CH = {
 };
 const ORDER = ["eugene","haul","wire"];
 const V = window.VIDEOS || [];
-const PUBLISHED_UNTIL = "2026-11-20";
-const DAYS = ["неділя","понеділок","вівторок","середа","четвер","пʼятниця","субота"];
 const fmtDur = s => { s = Math.round(s); return Math.floor(s/60)+":"+String(s%60).padStart(2,"0"); };
-const fmtDay = d => { const x = new Date(d+"T12:00:00"); return `${DAYS[x.getDay()][0].toUpperCase()+DAYS[x.getDay()].slice(1)}, ${x.getDate()} листопада`; };
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const playSvg = '<svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="29" fill="rgba(0,0,0,.55)" stroke="#fff" stroke-width="2"/><path d="M24 18l18 12-18 12z" fill="#fff"/></svg>';
 
@@ -173,7 +170,7 @@ tabs.onclick = e => { const b = e.target.closest(".tab"); if (b) location.hash =
 // home
 const shorts = V.filter(v => !v.long).length, longs = V.filter(v => v.long).length;
 const hours = V.reduce((a, v) => a + v.dur, 0) / 3600;
-document.getElementById("stats").innerHTML = [[3,"канали"],[shorts,"шортсів"],[longs,"довгих відео ~10 хв"],[hours.toFixed(1)+" год","готового відео"],[V.filter(v=>v.date<=PUBLISHED_UNTIL).length,"вже вийшло"]]
+document.getElementById("stats").innerHTML = [[3,"канали"],[shorts,"шортсів"],[longs,"довгих відео ~10 хв"],[hours.toFixed(1)+" год","готового відео"],[V.filter(v=>v.pub).length,"вже вийшло"]]
   .map(([b,s]) => `<div class="stat"><b>${b}</b><small>${s}</small></div>`).join("");
 document.getElementById("chcards").innerHTML = ORDER.map(k => {
   const vs = V.filter(v => v.ch === k), sh = vs.filter(v => !v.long);
@@ -198,14 +195,13 @@ secs.innerHTML = ORDER.map(k => {
 
 function renderDays(k, f) {
   const vs = V.filter(v => v.ch === k && (f === "all" || (f === "long") === v.long));
-  const dates = [...new Set(vs.map(v => v.date))];
-  document.getElementById("days-"+k).innerHTML = dates.map(d => {
-    const pub = d <= PUBLISHED_UNTIL;
-    return `<div class="day"><div class="dayh"><h4>${fmtDay(d)}</h4><span class="st ${pub?"pub":"rdy"}">${pub?"Вийшло":"Готово до публікації"}</span></div>
-    <div class="grid">${vs.filter(v => v.date === d).map(v => `<button class="card${v.long?" long":""}" data-id="${v.id}">
+  const groups = [["Довгі відео · YouTube", vs.filter(v => v.long)], ["Шортси · YouTube Shorts, TikTok, Reels", vs.filter(v => !v.long)]].filter(g => g[1].length);
+  document.getElementById("days-"+k).innerHTML = groups.map(([name, list]) => {
+    return `<div class="day"><div class="dayh"><h4>${name}</h4><span class="st rdy">${list.length}</span></div>
+    <div class="grid">${list.map(v => `<button class="card${v.long?" long":""}" data-id="${v.id}">
       <div class="thumb">${v.poster?`<img loading="lazy" src="${v.poster}" alt="">`:""}<div class="play">${playSvg}</div>
       <span class="badge${v.long?" lg":""}">${v.long?"YOUTUBE · LONG":"SHORT"}</span><span class="dur">${fmtDur(v.dur)}</span></div>
-      <div class="meta"><div class="tm"><i style="background:${pub?"var(--ok)":"var(--ready)"}"></i>${v.time} ${v.tz}</div><div class="tt">${esc(v.title)}</div></div></button>`).join("")}</div></div>`;
+      <div class="meta"><div class="tm"><i style="background:${v.pub?"var(--ok)":"var(--ready)"}"></i>${v.pub?"Вийшло":"Готово"}</div><div class="tt">${esc(v.title)}</div></div></button>`).join("")}</div></div>`;
   }).join("");
 }
 ORDER.forEach(k => renderDays(k, "all"));
@@ -223,7 +219,7 @@ function openV(id) {
   mbox.className = "mbox" + (v.long ? " long" : "");
   mbox.innerHTML = `<div class="mvid"><video src="${v.video}" poster="${v.poster}" controls autoplay playsinline preload="metadata"></video></div>
     <div class="minfo"><div class="tm" style="color:${CH[v.ch].color}">${CH[v.ch].name}</div>
-    <div class="tm">${fmtDay(v.date)} · ${v.time} ${v.tz} · ${v.long?"довге відео":"шортс"} · ${fmtDur(v.dur)}</div>
+    <div class="tm">${v.pub?"Вийшло":"Готово до публікації"} · ${v.long?"довге відео":"шортс"} · ${fmtDur(v.dur)}</div>
     <h3>${esc(v.title)}</h3>
     <details><summary>Тексти для публікації: назва, опис, теги, підписи</summary><pre>${esc(v.text)}</pre></details>
     <div class="nav2"><button data-d="-1">← Попереднє</button><button data-d="1">Наступне →</button></div></div>`;
