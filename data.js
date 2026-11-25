@@ -8,7 +8,7 @@ window.VIDEOS = [
   "video": "media/eugene/eugene-01.mp4",
   "poster": "media/eugene/eugene-01.jpg",
   "dur": 34.88,
-  "pub": true
+  "pub": false
  },
  {
   "ch": "eugene",
@@ -19,7 +19,7 @@ window.VIDEOS = [
   "video": "media/eugene/eugene-02.mp4",
   "poster": "media/eugene/eugene-02.jpg",
   "dur": 47.936,
-  "pub": true
+  "pub": false
  },
  {
   "ch": "eugene",
@@ -30,7 +30,7 @@ window.VIDEOS = [
   "video": "media/eugene/eugene-03.mp4",
   "poster": "media/eugene/eugene-03.jpg",
   "dur": 620.842,
-  "pub": true
+  "pub": false
  },
  {
   "ch": "eugene",
@@ -41,7 +41,7 @@ window.VIDEOS = [
   "video": "media/eugene/eugene-04.mp4",
   "poster": "media/eugene/eugene-04.jpg",
   "dur": 46.25,
-  "pub": true
+  "pub": false
  },
  {
   "ch": "eugene",
@@ -52,7 +52,7 @@ window.VIDEOS = [
   "video": "media/eugene/eugene-05.mp4",
   "poster": "media/eugene/eugene-05.jpg",
   "dur": 36.373,
-  "pub": true
+  "pub": false
  },
  {
   "ch": "eugene",
@@ -63,7 +63,7 @@ window.VIDEOS = [
   "video": "media/eugene/eugene-06.mp4",
   "poster": "media/eugene/eugene-06.jpg",
   "dur": 42.709,
-  "pub": true
+  "pub": false
  },
  {
   "ch": "eugene",
@@ -74,7 +74,7 @@ window.VIDEOS = [
   "video": "media/eugene/eugene-07.mp4",
   "poster": "media/eugene/eugene-07.jpg",
   "dur": 37.333333,
-  "pub": true
+  "pub": false
  },
  {
   "ch": "eugene",
@@ -85,7 +85,7 @@ window.VIDEOS = [
   "video": "media/eugene/eugene-08.mp4",
   "poster": "media/eugene/eugene-08.jpg",
   "dur": 38.912,
-  "pub": true
+  "pub": false
  },
  {
   "ch": "eugene",
@@ -96,7 +96,7 @@ window.VIDEOS = [
   "video": "media/eugene/eugene-09.mp4",
   "poster": "media/eugene/eugene-09.jpg",
   "dur": 38.784,
-  "pub": true
+  "pub": false
  },
  {
   "ch": "eugene",
@@ -261,7 +261,7 @@ window.VIDEOS = [
   "video": "media/haul/haul-01.mp4",
   "poster": "media/haul/haul-01.jpg",
   "dur": 41.237,
-  "pub": true
+  "pub": false
  },
  {
   "ch": "haul",
@@ -272,7 +272,7 @@ window.VIDEOS = [
   "video": "media/haul/haul-02.mp4",
   "poster": "media/haul/haul-02.jpg",
   "dur": 39.786,
-  "pub": true
+  "pub": false
  },
  {
   "ch": "haul",
@@ -283,7 +283,7 @@ window.VIDEOS = [
   "video": "media/haul/haul-03.mp4",
   "poster": "media/haul/haul-03.jpg",
   "dur": 43.306,
-  "pub": true
+  "pub": false
  },
  {
   "ch": "haul",
@@ -294,7 +294,7 @@ window.VIDEOS = [
   "video": "media/haul/haul-04.mp4",
   "poster": "media/haul/haul-04.jpg",
   "dur": 37.077,
-  "pub": true
+  "pub": false
  },
  {
   "ch": "haul",
@@ -305,7 +305,7 @@ window.VIDEOS = [
   "video": "media/haul/haul-05.mp4",
   "poster": "media/haul/haul-05.jpg",
   "dur": 477.888,
-  "pub": true
+  "pub": false
  },
  {
   "ch": "haul",
@@ -316,7 +316,7 @@ window.VIDEOS = [
   "video": "media/haul/haul-06.mp4",
   "poster": "media/haul/haul-06.jpg",
   "dur": 47.082,
-  "pub": true
+  "pub": false
  },
  {
   "ch": "haul",
@@ -327,7 +327,7 @@ window.VIDEOS = [
   "video": "media/haul/haul-07.mp4",
   "poster": "media/haul/haul-07.jpg",
   "dur": 37.802,
-  "pub": true
+  "pub": false
  },
  {
   "ch": "haul",
@@ -338,7 +338,7 @@ window.VIDEOS = [
   "video": "media/haul/haul-08.mp4",
   "poster": "media/haul/haul-08.jpg",
   "dur": 39.914,
-  "pub": true
+  "pub": false
  },
  {
   "ch": "haul",
@@ -349,7 +349,7 @@ window.VIDEOS = [
   "video": "media/haul/haul-09.mp4",
   "poster": "media/haul/haul-09.jpg",
   "dur": 43.413,
-  "pub": true
+  "pub": false
  },
  {
   "ch": "haul",
@@ -360,7 +360,7 @@ window.VIDEOS = [
   "video": "media/haul/haul-10.mp4",
   "poster": "media/haul/haul-10.jpg",
   "dur": 27.669,
-  "pub": true
+  "pub": false
  },
  {
   "ch": "haul",
@@ -569,7 +569,7 @@ window.VIDEOS = [
   "video": "media/wire/wire-08.mp4",
   "poster": "media/wire/wire-08.jpg",
   "dur": 60.366667,
-  "pub": false
+  "pub": true
  },
  {
   "ch": "wire",
@@ -580,7 +580,7 @@ window.VIDEOS = [
   "video": "media/wire/wire-09.mp4",
   "poster": "media/wire/wire-09.jpg",
   "dur": 65.4,
-  "pub": false
+  "pub": true
  },
  {
   "ch": "wire",
@@ -591,7 +591,7 @@ window.VIDEOS = [
   "video": "media/wire/wire-10.mp4",
   "poster": "media/wire/wire-10.jpg",
   "dur": 64.666667,
-  "pub": false
+  "pub": true
  },
  {
   "ch": "wire",
@@ -602,7 +602,7 @@ window.VIDEOS = [
   "video": "media/wire/wire-11.mp4",
   "poster": "media/wire/wire-11.jpg",
   "dur": 455.733333,
-  "pub": false
+  "pub": true
  },
  {
   "ch": "wire",
@@ -613,7 +613,7 @@ window.VIDEOS = [
   "video": "media/wire/wire-12.mp4",
   "poster": "media/wire/wire-12.jpg",
   "dur": 67.477,
-  "pub": false
+  "pub": true
  },
  {
   "ch": "wire",
@@ -624,7 +624,7 @@ window.VIDEOS = [
   "video": "media/wire/wire-13.mp4",
   "poster": "media/wire/wire-13.jpg",
   "dur": 60.966667,
-  "pub": false
+  "pub": true
  },
  {
   "ch": "wire",
@@ -635,7 +635,7 @@ window.VIDEOS = [
   "video": "media/wire/wire-14.mp4",
   "poster": "media/wire/wire-14.jpg",
   "dur": 61.781,
-  "pub": false
+  "pub": true
  },
  {
   "ch": "wire",
@@ -646,7 +646,7 @@ window.VIDEOS = [
   "video": "media/wire/wire-15.mp4",
   "poster": "media/wire/wire-15.jpg",
   "dur": 64.512,
-  "pub": false
+  "pub": true
  },
  {
   "ch": "wire",
@@ -657,6 +657,6 @@ window.VIDEOS = [
   "video": "media/wire/wire-16.mp4",
   "poster": "media/wire/wire-16.jpg",
   "dur": 65.9,
-  "pub": false
+  "pub": true
  }
 ];
